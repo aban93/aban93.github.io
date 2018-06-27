@@ -5,9 +5,9 @@
   <subtitle>Our blog , Our life</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://aban.fun/"/>
   <updated>2018-06-26T07:25:36.705Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://aban.fun/</id>
   
   <author>
     <name>Aban</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2018/06/26/hello-world/"/>
-    <id>http://yoursite.com/2018/06/26/hello-world/</id>
+    <link href="http://aban.fun/2018/06/26/hello-world/"/>
+    <id>http://aban.fun/2018/06/26/hello-world/</id>
     <published>2018-06-26T07:25:36.704Z</published>
     <updated>2018-06-26T07:25:36.705Z</updated>
     
