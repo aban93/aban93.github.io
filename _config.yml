@@ -4,8 +4,8 @@
 
 # Site
 title: Aban's blog
-subtitle: Our blog , Our life
-description: 我们为了生活汲取技术，为了技术更加热爱生活
+subtitle: I am a programmer , not a imkuqin
+description: 我们为了生活汲取技术,为了技术更加热爱生活
 keywords:
 author: Aban
 language: zh-Hans
@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://aban.fun
+url: https://aban.fun
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
