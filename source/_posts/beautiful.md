@@ -1,7 +1,6 @@
 ---
 title: beautiful
 categories: 分类1
-tags:
 ---
 Quick Start
 ---
