@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://aban.fun/2018/06/28/hello-world/</loc>
-    <lastmod>2018-06-28T08:35:28.822Z</lastmod>
+    <lastmod>2018-06-28T09:56:12.802Z</lastmod>
     <data>
         <display>
         <title>Hello World</title>
@@ -13,23 +13,30 @@
         
          
            
+             
+              <breadCrumb title="分类1" url="https://aban.fun/categories/%E5%88%86%E7%B1%BB1/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://aban.fun/2018/06/28/Pomes/</loc>
-    <lastmod>2018-06-28T08:35:04.292Z</lastmod>
+    <loc>https://aban.fun/2018/06/28/beautiful/</loc>
+    <lastmod>2018-06-28T09:56:11.299Z</lastmod>
     <data>
         <display>
-        <title></title>
-        <pubTime>2018-06-28T03:28:02.421Z</pubTime>
+        <title>beautiful</title>
+        <pubTime>2018-06-28T09:33:26.019Z</pubTime>
         
          
            
+             
+              <breadCrumb title="分类1" url="https://aban.fun/categories/%E5%88%86%E7%B1%BB1/"/>
+          
         </display>
     </data>
     </url>
 
+    
 </urlset>
