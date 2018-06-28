@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://aban.fun/categories/index.html</loc>
+    
+    <lastmod>2018-06-28T10:15:28.566Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://aban.fun/2018/06/28/hello-world/</loc>
     
     <lastmod>2018-06-28T09:56:12.802Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://aban.fun/2018/06/28/beautiful/</loc>
     
     <lastmod>2018-06-28T09:56:11.299Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://aban.fun/categories/index.html</loc>
-    
-    <lastmod>2018-06-28T09:23:19.508Z</lastmod>
     
   </url>
   
