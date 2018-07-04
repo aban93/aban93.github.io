@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[快乐的一天]]></title>
-    <url>%2F2018%2F06%2F29%2F%E5%BF%AB%E4%B9%90%E7%9A%84%E4%B8%80%E5%A4%A9%2F</url>
-    <content type="text"><![CDATA[如何成为一个快乐的人学会欣赏看看你需要哪个菜单就把哪个取消注释打开就行了； 关于后面的格式，以archives: /archives/ || archive为例： || 之前的/archives/表示标题“归档”，关于标题的格式可以去themes/next/languages/zh-Hans.yml中参考或修改 ||之后的archive表示图标，可以去Font Awesome中查看或修改，Next主题所有的图标都来自Font Awesome。 学会包容在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。 为了描述方便，在以下说明中，将前者称为站点配置文件， 后者称为主题配置文件。]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[beautiful]]></title>
-    <url>%2F2018%2F06%2F28%2Fbeautiful%2F</url>
-    <content type="text"><![CDATA[Quick Startfirst: 窗前明月光,疑似地上霜。 举头望明月，低头思故乡。 second: 锄禾日当午，汗滴禾下土。 谁知盘中餐，粒粒皆辛苦。]]></content>
-      <categories>
-        <category>分类1</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2018%2F06%2F28%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
