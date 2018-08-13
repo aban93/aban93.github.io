@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Lambda表达式]]></title>
+    <url>%2F2018%2F08%2F14%2FLambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[1. 行为参数化在使用Lambda表达式之前，我们应该先理解一个重要概念—-行为参数化。行为参数话，简单来说，就是你准备好一个代码块，却不去执行它，这个代码块以后可以被程序其他部分调用。比如，将代码块传递给另一个方法，稍后去执行它。这个方法的行为就基于那块代码被参数化了。例如，你要处理一个集合，你一可能会写一个方法： 对列表中的每个元素做“某件不可描述的事情” 在列表处理完后做“另一件不可描述的事情” 遇到错误时可以做“另外一件不可描述的事情”]]></content>
+      <categories>
+        <category>Java 8</category>
+      </categories>
+      <tags>
+        <tag>Lambda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2018%2F08%2F13%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>

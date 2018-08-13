@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://aban.fun/"/>
-  <updated>2018-06-28T09:56:14.000Z</updated>
+  <updated>2018-08-13T17:37:37.656Z</updated>
   <id>https://aban.fun/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Lambda表达式</title>
+    <link href="https://aban.fun/2018/08/14/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>https://aban.fun/2018/08/14/Lambda表达式/</id>
+    <published>2018-08-13T16:08:31.000Z</published>
+    <updated>2018-08-13T17:37:37.656Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-行为参数化"><a href="#1-行为参数化" class="headerlink" title="1. 行为参数化"></a>1. 行为参数化</h3><p>在使用Lambda表达式之前，我们应该先理解一个重要概念—-行为参数化。<br>行为参数话，简单来说，就是你准备好一个代码块，却不去执行它，这个代码块以后可以被程序其他部分调用。<br><img src="/images/1.png" alt="img1"><br><a id="more"></a><br><img src="/images/2.png" alt="img2"><br>比如，将代码块传递给另一个方法，稍后去执行它。这个方法的行为就基于那块代码被参数化了。例如，你要处理一个集合，你一可能会写一个方法：</p><ul><li>对列表中的每个元素做“某件不可描述的事情”</li><li>在列表处理完后做“另一件不可描述的事情”</li><li>遇到错误时可以做“另外一件不可描述的事情”</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-行为参数化&quot;&gt;&lt;a href=&quot;#1-行为参数化&quot; class=&quot;headerlink&quot; title=&quot;1. 行为参数化&quot;&gt;&lt;/a&gt;1. 行为参数化&lt;/h3&gt;&lt;p&gt;在使用Lambda表达式之前，我们应该先理解一个重要概念—-行为参数化。&lt;br&gt;行为参数话，简单来说，就是你准备好一个代码块，却不去执行它，这个代码块以后可以被程序其他部分调用。&lt;br&gt;&lt;img src=&quot;/images/1.png&quot; alt=&quot;img1&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Java 8" scheme="https://aban.fun/categories/Java-8/"/>
+    
+    
+      <category term="Lambda" scheme="https://aban.fun/tags/Lambda/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
