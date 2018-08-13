@@ -104,3 +104,7 @@ deploy:
   type: git
   repo: https://github.com/aban93/aban93.github.io.git
   branch: master
+
+live2d:
+  model:
+  bottom: -30
