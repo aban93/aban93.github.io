@@ -9,8 +9,8 @@ categories: Java 8
 ## 行为参数化的思想
 在使用Lambda表达式之前，我们应该先理解一个重要概念----行为参数化。
 行为参数化，简单来说，就是你准备好一个代码块，却不去执行它，这个代码块以后可以被程序其他部分调用。更通俗的说，就是把方法(你的代码)作为参数传递给另一个方法。
-![img1](/images/1.png)
 <!-- more -->
+![img1](/images/1.png)
 ![img2](/images/2.png)
 比如，将代码块传递给另一个方法，稍后去执行它。这个方法的行为就基于那块代码被参数化了。例如，你要处理一个集合，你一可能会写一个方法：
 * 对列表中的每个元素做“某件不可描述的事情”
@@ -271,3 +271,35 @@ List<Integer> list = map(
 		(String s) -> s.length()
 	);
 ```
+## 方法引用
+我们上面写到的Lambda表达式是很方便的，但确实它们可以再简洁一点，比如先前比较两个苹果重量的Lambda表达式：
+``` bash
+apples.sort((Apple a1,Apple a2) -> a1.getWeight().compareTo(a2.getWeight()));
+```
+使用<em><b> 方法引用 </b></em>和 java.util.Comparator.comparing 可以写成这样子：
+``` bash
+apples.sort(comparing(Apple::getWeight));
+```
+### 基本格式
+方法引用显式地指明调用的方法的名称，使代码的<b>可读性更好</b>。
+当你想要使用方法引用时，目标引用放在分隔符 : : 前，方法名称放在后面：
+![img4](/images/4.png)
+下面给出了一些Java 8中方法引用的例子：
+![img5](/images/5.png)
+### 如何构建
+方法引用主要有三类。
+1. 指向<em>静态方法</em>的方法引用(例如Integer 的 parseInt 方法)
+``` bash
+Integer :: parseInt
+```
+2. 指向<em>任意类型实例方法</em>的方法引用(例如String 的 length 方法)
+``` bash
+String :: length  //实例为方法参数
+```
+3. 指向<em>现有对象的实例方法</em>的方法引用(假设你有一个局部变量transaction，为Transaction类型，它支持实例方法getValue，就可以写成下面这样)
+``` bash
+Transaction :: getValue  //实例为外部对象
+```
+第2钟和第3钟乍一看有点晕，其实第二种方法引用的思想就是你在引用一个对象的方法，这个对象本身是lambda的一个参数；第三种方法引用是你再调用一个已经存在的外部对象的方法。
+# 总结
+在了解了Lambda表达式的和方法引用的用法之后，你就可以自己去尝试用Lambda表达式去简化一些代码了(你可以自己去练习一下)。不过用于传递Lambda表达式的Comparator、Function、Predicate等函数式接口提供了允许你进行复合的方法。这意味着你可以把多个简单的Lambda复合成复杂的表达式。有兴趣的童鞋可以自己去了解下，这里不再详细讲解。
