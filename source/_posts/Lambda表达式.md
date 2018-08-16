@@ -283,7 +283,7 @@ public static <T> T getObject(Supplier<T> s) {
     return s.get();
 }
 
-Apple apple = () -> new Apple();
+Apple apple = getObject(() -> new Apple());
 ```
 ## 方法引用
 我们上面写到的Lambda表达式是很方便的，但确实它们可以再简洁一点，比如根据苹果重量对集合进行排序，Lambda表达式是这样的：
