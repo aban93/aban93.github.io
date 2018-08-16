@@ -91,23 +91,23 @@
 
 
 
-<meta name="description" content="简言由于之前一直使用的都是Java 7,对Java 8的一些新特性不甚了解。最近Aban学习了一下Java 8的一些新特性，在这里简单总结、分享一下。如有错误，还望指正。 行为参数化的思想在使用Lambda表达式之前，我们应该先理解一个重要概念—-行为参数化。行为参数化，简单来说，就是你准备好一个代码块，却不去执行它，这个代码块以后可以被程序其他部分调用。更通俗的说，就是把方法(你的代码)作为参数">
+<meta name="description" content="简言由于之前一直使用的都是Java 7,对Java 8的一些新特性不甚了解。最近Aban学习了一下Java 8的一些新特性，在这里简单总结、分享一下关于Lambda表达式的一些东西。如有错误，还望指正。 行为参数化的思想在使用Lambda表达式之前，我们应该先理解一个重要概念—-行为参数化。行为参数化，简单来说，就是你准备好一个代码块，却不去执行它，这个代码块以后可以被程序其他部分调用。更通俗的说">
 <meta name="keywords" content="Lambda">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lambda表达式">
 <meta property="og:url" content="https://aban.fun/2018/08/14/Lambda表达式/index.html">
 <meta property="og:site_name" content="Aban&#39;s blog">
-<meta property="og:description" content="简言由于之前一直使用的都是Java 7,对Java 8的一些新特性不甚了解。最近Aban学习了一下Java 8的一些新特性，在这里简单总结、分享一下。如有错误，还望指正。 行为参数化的思想在使用Lambda表达式之前，我们应该先理解一个重要概念—-行为参数化。行为参数化，简单来说，就是你准备好一个代码块，却不去执行它，这个代码块以后可以被程序其他部分调用。更通俗的说，就是把方法(你的代码)作为参数">
+<meta property="og:description" content="简言由于之前一直使用的都是Java 7,对Java 8的一些新特性不甚了解。最近Aban学习了一下Java 8的一些新特性，在这里简单总结、分享一下关于Lambda表达式的一些东西。如有错误，还望指正。 行为参数化的思想在使用Lambda表达式之前，我们应该先理解一个重要概念—-行为参数化。行为参数化，简单来说，就是你准备好一个代码块，却不去执行它，这个代码块以后可以被程序其他部分调用。更通俗的说">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://aban.fun/images/1.png">
 <meta property="og:image" content="https://aban.fun/images/2.png">
 <meta property="og:image" content="https://aban.fun/images/3.png">
 <meta property="og:image" content="https://aban.fun/images/4.png">
 <meta property="og:image" content="https://aban.fun/images/5.png">
-<meta property="og:updated_time" content="2018-08-15T03:28:44.244Z">
+<meta property="og:updated_time" content="2018-08-16T01:33:19.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lambda表达式">
-<meta name="twitter:description" content="简言由于之前一直使用的都是Java 7,对Java 8的一些新特性不甚了解。最近Aban学习了一下Java 8的一些新特性，在这里简单总结、分享一下。如有错误，还望指正。 行为参数化的思想在使用Lambda表达式之前，我们应该先理解一个重要概念—-行为参数化。行为参数化，简单来说，就是你准备好一个代码块，却不去执行它，这个代码块以后可以被程序其他部分调用。更通俗的说，就是把方法(你的代码)作为参数">
+<meta name="twitter:description" content="简言由于之前一直使用的都是Java 7,对Java 8的一些新特性不甚了解。最近Aban学习了一下Java 8的一些新特性，在这里简单总结、分享一下关于Lambda表达式的一些东西。如有错误，还望指正。 行为参数化的思想在使用Lambda表达式之前，我们应该先理解一个重要概念—-行为参数化。行为参数化，简单来说，就是你准备好一个代码块，却不去执行它，这个代码块以后可以被程序其他部分调用。更通俗的说">
 <meta name="twitter:image" content="https://aban.fun/images/1.png">
 
 
@@ -414,7 +414,7 @@
       
 
       
-        <h1 id="简言"><a href="#简言" class="headerlink" title="简言"></a>简言</h1><p>由于之前一直使用的都是Java 7,对Java 8的一些新特性不甚了解。最近Aban学习了一下Java 8的一些新特性，在这里简单总结、分享一下。如有错误，还望指正。</p>
+        <h1 id="简言"><a href="#简言" class="headerlink" title="简言"></a>简言</h1><p>由于之前一直使用的都是Java 7,对Java 8的一些新特性不甚了解。最近Aban学习了一下Java 8的一些新特性，在这里简单总结、分享一下关于Lambda表达式的一些东西。如有错误，还望指正。</p>
 <h2 id="行为参数化的思想"><a href="#行为参数化的思想" class="headerlink" title="行为参数化的思想"></a>行为参数化的思想</h2><p>在使用Lambda表达式之前，我们应该先理解一个重要概念—-行为参数化。<br>行为参数化，简单来说，就是你准备好一个代码块，却不去执行它，这个代码块以后可以被程序其他部分调用。更通俗的说，就是把方法(你的代码)作为参数传递给另一个方法。<br><a id="more"></a><br><img src="/images/1.png" alt="img1"><br><img src="/images/2.png" alt="img2"><br>比如，将代码块传递给另一个方法，稍后去执行它。这个方法的行为就基于那块代码被参数化了。例如，你要处理一个集合，你一可能会写一个方法：</p>
 <ul>
 <li>对列表中的每个元素做“某件不可描述的事情”</li>
