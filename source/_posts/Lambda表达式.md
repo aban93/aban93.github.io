@@ -272,7 +272,7 @@ List<Integer> list = map(
 	);
 ```
 ## 方法引用
-我们上面写到的Lambda表达式是很方便的，但确实它们可以再简洁一点，比如先前比较两个苹果重量的Lambda表达式：
+我们上面写到的Lambda表达式是很方便的，但确实它们可以再简洁一点，比如根据苹果重量对集合进行排序，Lambda表达式是这样的：
 ``` bash
 apples.sort((Apple a1,Apple a2) -> a1.getWeight().compareTo(a2.getWeight()));
 ```
