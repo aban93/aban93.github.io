@@ -271,6 +271,20 @@ List<Integer> list = map(
 		(String s) -> s.length()
 	);
 ```
+### Supplier
+java.util.function.Supplier<T>接口定义了一个get的抽象方法，它没有参数，返回一个泛型T的对象，这类似于一个工厂方法。
+比如返回一个Apple对象。
+``` bash
+public interface Supplier<T> {
+    T get();
+}
+
+public static <T> T getObject(Supplier<T> s) {
+    return s.get();
+}
+
+Apple apple = () -> new Apple();
+```
 ## 方法引用
 我们上面写到的Lambda表达式是很方便的，但确实它们可以再简洁一点，比如根据苹果重量对集合进行排序，Lambda表达式是这样的：
 ``` bash
@@ -301,5 +315,83 @@ String :: length  //实例为方法参数
 Transaction :: getValue  //实例为外部对象
 ```
 第2钟和第3钟乍一看有点晕，其实第二种方法引用的思想就是你在引用一个对象的方法，这个对象本身是lambda的一个参数；第三种方法引用是你再调用一个已经存在的外部对象的方法。
+### 构造函数引用
+上面我展示了如何创建方法引用，其实我们也可以对类的构造函数做类似的事情。
+我们可以利用 <b>ClassName :: new</b> 的形式构建一个构造函数的引用。假设一个构造函数没有参数，它试合Supplier的签名() -> Apple:
+``` bash
+Supplier<Apple> supplier = Apple :: new;
+Apple apple = supplier.get();
+```
+在使用方法引用之前它是这样的：
+``` bash
+Supplier<Apple> supplier = () -> new Apple();
+Apple apple = supplier.get();
+```
+如何你的构造函数是有参数的，比如签名是Apple(Integer weight),那么它就适合Function接口的签名：
+``` bash
+Function<Integer,Apple> func = Apple :: new;
+Apple apple = func.apply(100);
+```
+这就等价于：
+``` bash
+Function<Integer,Apple> func = (weight) -> new Apple(weight);
+Apple apple = func.apply(100);
+```
+## Lambda和方法引用实战
+接了下来我们继续研究前面的一个例子——按照苹果重量给Apple列表排序，我会展示从原始粗暴的状态到更加简明状态的过程，而且会用到前面提到的概念和功能：行为参数化、匿名类、Lambda表达式和方法引用。
+### 行为参数化——传递代码
+Java 8的API已经为我们提供了一个List可用的sort方法，我们可以直接使用。我们可以看下sort方法的签名：
+``` bash
+void sort(Comparator<? super E> c)
+```
+它需要一个Comparator对象来比较两个Apple，所以第一个方案可以是这样的：
+``` bash
+public class AppleComparator implements Comparator<Apple>{
+
+	@Override
+	public int compare(Apple a1, Apple a2) {
+		return a1.getWeight().compareTo(a2.getWeight());
+	}
+
+}
+
+apples.sort(new AppleComparator());
+```
+### 使用匿名类
+我们可以使用匿名类来改进，而不是实现一个Comparator却只实例化一次：
+``` bash
+apples.sort(new Comparator<Apple>() {
+    public int compare(Apple a1, Apple a2) {
+        return a1.getWeight().compareTo(a2.getWeight());
+    }
+});
+```
+### 使用Lambda表达式
+使用匿名类的方案还挺啰嗦的，既然我们了解了Lambda表达式，它可以用更轻量级的语法来<em>传递代码</em>。我们需要记住这一点：<b>在需要函数式接口的地方可以使用Lambda表达式，抽象方法的签名描述了Lambda表达式的签名</b>。
+Comparator接口抽象方法的签名是符合这种形式的——(T,T) -> int。所以我们改进后的方案是这样的：
+``` bash
+apples.sort((Apple a1,Apple a2) 
+              -> a1.getWeight().compareTo(a2.getWeight())
+);
+```
+其实，Java的编译器是可以根据Lambda出现的上下文来推断Lambda表达式参数的类型的：
+``` bash
+apples.sort((a1,a2) -> a1.getWeight().compareTo(a2.getWeight()));
+```
+Comparator接口其实有一个comparing的静态方法，可以接受一个Function，并返回一个Comparator对象。像下面这样：
+``` bash
+Comparator<Apple> c = Comparator.comparing((Apple a) -> a.getWeight());
+```
+这时候我们的代码就可以更简洁一点了：
+``` bash
+import static java.util.Comparator.comparing;
+
+apples.sort(comparing(a -> a.getWeight()));
+```
+### 使用方法引用
+最后，我们可以使用方法引用来完成最终解决方案：
+``` bash
+apples.sort(comparing(Apple::getWeight));
+```
 # 总结
 在了解了Lambda表达式的和方法引用的用法之后，你就可以自己去尝试用Lambda表达式去简化一些代码了(你可以自己去练习一下)。不过用于传递Lambda表达式的Comparator、Function、Predicate等函数式接口提供了允许你进行复合的方法。这意味着你可以把多个简单的Lambda复合成复杂的表达式。有兴趣的童鞋可以自己去了解下，这里不再详细讲解。
